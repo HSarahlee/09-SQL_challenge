@@ -18,7 +18,7 @@ select first_name, last_name, hire_date from "Employees"
 where hire_date >= '1986-01-01T00:00:00' and hire_date < '1987-01-01T00:00:00'
 
 
---Q3) list the manager of each departmnet, department number, department name, manager's employee number, last name, first, name
+--Q3) list the manager of each department, department number, department name, manager's employee number, last name, first, name
 select dm.dept_no, d.dept_name, de.emp_no, e.last_name, e.first_name from
 "Dept_manager" dm inner join "Department" d on dm.dept_no = d.dept_no 
 inner join "Dept_emp" de on dm.emp_no = de.emp_no 
@@ -36,7 +36,7 @@ select first_name, last_name, sex from "Employees"
 where first_name = 'Hercules' and last_name like 'B%'
 
 
---Q6) list all employees in the Sales Deparment, including their employee number, last name, first name, and department name
+--Q6) list all employees in the Sales Department, including their employee number, last name, first name, and department name
 select d.dept_name, de.emp_no, e.last_name, e.first_name from "Employees" e 
 inner join "Dept_emp" de on e.emp_no = de.emp_no
 inner join "Department" d on d.dept_no = de.dept_no
@@ -55,6 +55,10 @@ select last_name, count(*) as frequency
 from "Employees" 
 group by last_name 
 order by frequency desc
+
+--epilogue ID 499942
+select first_name, last_name, emp_no from "Employees"
+where emp_no = 499942
 
 
 
